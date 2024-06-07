@@ -12,22 +12,29 @@
 
         $nums = [15, 4, 18, 23, 10];
 
-        echo '昇順にソートします。<br>';
-        sort($nums);
-        foreach($nums as $n){
-            echo "{$n}<br>";
+        function sort_2way(array $array, bool $order)
+        {
+            if ($order == true) {
+                echo '昇順にソートします。<br>';
+
+                sort($array);
+                foreach ($array as $a) {
+                    echo "{$a}<br>";
+                }
+            } else {
+                echo '降順にソートします。<br>';
+
+                rsort($array);
+                foreach ($array as $a) {
+                    echo "{$a}<br>";
+                }
+            }
         }
 
-        echo '降順にソートします。<br>';
-        rsort($nums);
-        foreach($nums as $n){
-            echo "{$n}<br>";
-        }
-
+        sort_2way($nums, true);
+        sort_2way($nums, false);
 
         ?>
-
-
     </p>
 </body>
 
